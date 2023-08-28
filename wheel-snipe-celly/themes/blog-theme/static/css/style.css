@@ -1,0 +1,187 @@
+/* General Styles */
+.app__flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.p-text {
+    font-size: 1rem;
+    text-align: left;
+    color: #e4e4e4;
+    line-height: 1.5;
+}
+
+@media screen and (min-width: 2000px) {
+    .p-text{
+        font-size: 1.75rem;
+    }
+}
+
+.hidden {
+    display: none;
+}
+/* End General Styles */
+
+/* Navbar Styles */
+.app__navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: #fff;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(4px);
+    box-shadow: 3px 3px rgba(168, 168, 168, 0.2);
+    position: fixed;
+    z-index: 2;
+}
+
+.app__navbar-logo {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.app__navbar-logo img {
+    width: 70px;
+}
+
+@media screen and (min-width: 1000px){
+    .app__navbar-logo img {
+        width: 120px;
+    }
+}
+
+.app__navbar-links {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;;
+}
+
+.app__navbar-links li {
+    margin: 0 1rem;
+    cursor: pointer;
+    flex-direction: column;
+}
+
+.app__navbar-links li a {
+    color: black;
+    text-decoration: none;
+    flex-direction: column;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: all 0.3s ease-in-out;
+}
+
+@media screen and (max-width: 900px) {
+    .app__navbar-links{
+        display: none;
+    }
+    .app__navbar-right{
+        display: none;
+    }
+}
+
+.app__navbar-links li a:hover{
+    color: #7EB2DD
+}
+
+.app__navbar-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 70px;
+}
+
+@media screen and (min-width: 1000px){
+    .app__navbar-right {
+        width: 120px;
+    }
+}
+
+
+
+@media screen and (min-width: 900px) {
+    .app__navbar-menu {
+        display: none;
+    }
+}
+
+.app__navbar-menu-content {
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 5;
+    padding: 1rem;
+    width: 80%;
+    height: 100vh;
+    justify-content: flex-end;
+    align-items: flex-end;
+    flex-direction: column;
+    background-color: #fff;
+    background-size: cover;
+    background-repeat: repeat;
+
+    box-shadow: 0 0 20px rgba(168, 168, 168, 0.2);
+}
+
+.app__navbar-menu-content ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;;
+    flex-direction: column;
+}
+
+.app__navbar-menu-content ul li{
+    margin: 1rem;
+}
+
+.app__navbar-menu-content ul li a{
+    color: #000;
+    text-decoration: none;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 500;
+
+    transition: all 0.3s ease-in-out;
+}
+
+.app__navbar-menu-content ul li a:hover{
+    color: #90AFC5;
+}
+
+#close-menu-button {
+    color: black;
+}
+/* End Navbar Styles */
+
+/* Footer Styles */
+.app__footer {
+    position: relative;
+    bottom: 0;
+    display: flex;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+/* End Footer Styles */
+
+/* Color Scheme 
+
+    Nepal: #90AFC5
+    Ship Gray: #3E363F
+    Botticelli: #C4DFE6
+    Baby Blue #8AAAE5, White #FFFFFF
+*/
