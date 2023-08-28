@@ -1,0 +1,22 @@
+.app__flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.p-text {
+    font-size: 1rem;
+    text-align: left;
+    color: #e4e4e4;
+    line-height: 1.5;
+}
+
+@media screen and (min-width: 2000px) {
+    .p-text{
+        font-size: 1.75rem;
+    }
+}
+
+.hidden {
+    display: none;
+}
