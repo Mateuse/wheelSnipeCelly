@@ -20,3 +20,47 @@
 .hidden {
     display: none;
 }
+
+.heading-text {
+    font-weight: bold;
+    @media screen and (min-width: 2000px) {
+        font-size: 4rem;
+    }
+
+    @media screen and (min-width: 1000px) and (max-width: 2000px) {
+        font-size: 3rem;
+    }
+    
+
+    @media screen and (max-width: 1000px){
+        font-size: 2rem;
+    }
+}
+
+.italic-text {
+    font-style: italic;
+
+    @media screen and (min-width: 2000px) {
+        font-size: 2rem;
+    }
+
+    @media screen and (min-width: 1000px) and (max-width: 2000px) {
+        font-size: 1rem;
+    }
+    
+
+    @media screen and (max-width: 1000px){
+        font-size: 1rem;
+    }
+}
+
+.p-heading-selections {
+    font-weight: 1.5rem;
+    font-weight: bold;
+
+    &:hover {
+        cursor: pointer;
+        text-decoration: underline;
+        color: var(--color-secondary);
+    }
+} 

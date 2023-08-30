@@ -3,3 +3,27 @@
 @import 'common';
 
 @import 'header';
+@import 'intro';
+@import 'gallery';
+
+.app {
+    display: flex;
+    flex-direction: column;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    scroll-behavior: smooth;
+    font-family: 'Inter';
+}
+
+html::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+}
+

@@ -1,4 +1,7 @@
 baseURL = 'http://example.org/'
 languageCode = 'en-us'
-title = 'My New Hugo Site'
+title = 'Wheel Snipe Celly'
 theme = 'blog-theme'
+
+[params]
+    slogan = 'Breaking the ice, Analyzing the beauty of the game'

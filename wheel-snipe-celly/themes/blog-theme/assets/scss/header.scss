@@ -17,11 +17,30 @@
         align-items: center;
 
         img {
-            width: 70px;
-
             @media screen and (min-width: 1000px) {
                 width: 120px;
             }
+        }
+
+        @media screen and (max-width: 1000px) {
+            display: none;
+        }
+    }
+
+    .app__navbar-logo-mobile {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        img {
+            @media screen and (max-width: 1000px) {
+                width: 20px;
+                height: 45px;
+            }
+        }
+
+        @media screen and (min-width: 1000px) {
+            display: none;
         }
     }
 }
@@ -125,7 +144,7 @@
 
                 transition: all 0.3s ease-in-out;
 
-                &:hover{
+                &:hover {
                     color: var(--color-secondary);
                 }
             }

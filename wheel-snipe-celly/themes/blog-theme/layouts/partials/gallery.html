@@ -1,0 +1,62 @@
+<div class="app__gallery">
+    <div class="app__gallery-selections">
+        <p class="p-heading-selections">Latest</p>
+        <p class="p-heading-selections">View all</p>
+    </div>
+    <div id="app__gallery-items">
+        {{ $recentPosts := first 3 .Site.RegularPages.ByDate.Reverse }}
+        <div class="post-container-main">
+            {{ with index $recentPosts 0 }}
+            <a href="{{ .Permalink }}">
+                <div class="post-recent" style="background-image: url('/posts/{{ .File.BaseFileName }}.jpg')">
+                    <div class="overlay">
+                        <h2>{{ .Title }}</h2>
+                        <p>Topic: {{ .Params.topic }}</p>
+                        <p>Date: {{ .Date.Format "January 2, 2006" }}</p>
+                    </div>
+                </div>
+            </a>
+            {{ end }}
+        </div>
+        <div class="post-container">
+            {{ with index $recentPosts 1 }}
+            <a href="{{ .Permalink }}">
+                <div class="post" style="background-image: url('/posts/{{ .File.BaseFileName }}.jpg')">
+                    <div class="overlay">
+                        <h2>{{ .Title }}</h2>
+                        <p>Topic: {{ .Params.topic }}</p>
+                        <p>Date: {{ .Date.Format "January 2, 2006" }}</p>
+                    </div>
+                </div>
+            </a>
+            {{ end }}
+            {{ with index $recentPosts 2 }}
+            <a href="{{ .Permalink }}">
+                <div class="post" style="background-image: url('/posts/{{ .File.BaseFileName }}.jpg')">
+                    <div class="overlay">
+                        <h2>{{ .Title }}</h2>
+                        <p>Topic: {{ .Params.topic }}</p>
+                        <p>Date: {{ .Date.Format "January 2, 2006" }}</p>
+                    </div>
+                </div>
+            </a>
+            {{ end }}
+        </div>
+    </div>
+    <div id="app__gallery-items-mobile">
+        {{ $recentPosts := first 3 .Site.RegularPages.ByDate.Reverse }}
+        {{ range $index, $page := $recentPosts }}
+        <a href="{{ $page.Permalink}}">
+            <div class="post" style="background-image: url('/posts/{{ $page.File.BaseFileName }}.jpg');">
+                <div class="overlay">
+                    <div class="topic-container">
+                        <p>{{ $page.Params.topic }}</p>
+                    </div>
+                    <p class="title">{{ $page.Title }}</p>
+                    <p class="published">{{ $page.Date.Format "January 2, 2006" }}</p>
+                </div>
+            </div>
+        </a>
+        {{ end }}
+    </div>
+</div>

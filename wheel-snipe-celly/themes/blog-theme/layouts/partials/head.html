@@ -3,6 +3,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
     {{ $style := resources.Get "scss/main.scss" | toCSS | minify | fingerprint }}
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
     <link href="{{ $style.RelPermalink }}" rel="stylesheet">
     <link rel="icon" href="/celly.svg" type="image/png">
     {{ $title := print .Site.Title " | " .Title }}
