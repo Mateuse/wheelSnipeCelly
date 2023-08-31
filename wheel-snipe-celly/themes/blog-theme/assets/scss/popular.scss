@@ -35,7 +35,6 @@
     width: 100%;
 
     .carousel-card {
-        flex-basis: 33.3333%;
         margin: 0 1rem 0 0;
 
         .post-img {
@@ -78,6 +77,22 @@
                 margin-top: auto;
                 padding: 0 1rem 0.5rem 1rem;
             }
+        }
+
+        @media screen and (max-width: 700) {
+            flex-basis: 100%;
+        }
+
+        @media screen and (min-width: 700) and (max-width: 1000) {
+            flex-basis: 50%;
+        }
+
+        @media screen and (min-width: 1000) and (max-width: 2000) {
+            flex-basis: 33.3333%;
+        }
+
+        @media screen and (min-width: 2000) {
+            flex-basis: 25%;
         }
     }
     .carousel-chevron {
