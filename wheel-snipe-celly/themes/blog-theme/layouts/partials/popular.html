@@ -1,0 +1,24 @@
+<div class="app__popular">
+    <div class="app__popular-title">
+        <p class="p-heading-selections">Popular Posts</p>
+    </div>
+
+    <div class="app__popular-carousel">
+        <i data-feather="chevron-left" class="carousel-chevron carousel-chevron-left"></i>
+        {{ $recentPosts := first 3 .Site.RegularPages }}
+        {{ range $index, $page := $recentPosts }}
+        <div class="carousel-card">
+            <div class="post-img">
+                <img src="/posts/{{ $page.File.BaseFileName }}.jpg" alt="{{ $page.File.BaseFileName }}" />
+            </div>
+            <div class="post-info">
+                <p class="post-topic">{{ $page.Params.topic }}</p>
+                <p class="post-title">{{ $page.Title }}</p>
+                <p class="post-publish">{{ $page.Date.Format "January 2, 2006"}}</p>
+            </div>
+        </div>
+        {{ end }}
+        <i data-feather="chevron-right" class="carousel-chevron carousel-chevron-right"></i>
+    </div>
+
+</div>

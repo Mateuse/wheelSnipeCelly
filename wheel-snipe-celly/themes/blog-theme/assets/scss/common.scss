@@ -22,9 +22,9 @@
 }
 
 .heading-text {
-    font-weight: bold;
+    font-weight: 900;
     @media screen and (min-width: 2000px) {
-        font-size: 4rem;
+        font-size: 3rem;
     }
 
     @media screen and (min-width: 1000px) and (max-width: 2000px) {
@@ -41,7 +41,7 @@
     font-style: italic;
 
     @media screen and (min-width: 2000px) {
-        font-size: 2rem;
+        font-size: 1rem;
     }
 
     @media screen and (min-width: 1000px) and (max-width: 2000px) {
@@ -55,7 +55,7 @@
 }
 
 .p-heading-selections {
-    font-weight: 1.5rem;
+    font-size: 1.5rem;
     font-weight: bold;
 
     &:hover {

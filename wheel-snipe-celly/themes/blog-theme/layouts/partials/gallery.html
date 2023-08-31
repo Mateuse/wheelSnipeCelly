@@ -14,8 +14,8 @@
                             <div class="topic-container">
                                 <p>{{ .Params.topic }}</p>
                             </div>
-                            <h2>{{ .Title }}</h2>
-                            <p>Date: {{ .Date.Format "January 2, 2006" }}</p>
+                            <p class="post-title">{{ .Title }}</p>
+                            <p class="post-publish">{{ .Date.Format "January 2, 2006" }}</p>
                         </div>
                     </div>
                 </div>
@@ -31,8 +31,8 @@
                             <div class="topic-container">
                                 <p>{{ .Params.topic }}</p>
                             </div>
-                            <h2>{{ .Title }}</h2>
-                            <p>Date: {{ .Date.Format "January 2, 2006" }}</p>
+                            <p class="post-title">{{ .Title }}</p>
+                            <p class="post-publish">{{ .Date.Format "January 2, 2006" }}</p>
                         </div>
                     </div>
                 </div>
@@ -46,8 +46,8 @@
                             <div class="topic-container">
                                 <p>{{ .Params.topic }}</p>
                             </div>
-                            <h2>{{ .Title }}</h2>
-                            <p>Date: {{ .Date.Format "January 2, 2006" }}</p>
+                            <p class="post-title">{{ .Title }}</p>
+                            <p class="post-publish">{{ .Date.Format "January 2, 2006" }}</p>
                         </div>
                     </div>
                 </div>
@@ -65,8 +65,8 @@
                         <div class="topic-container">
                             <p>{{ $page.Params.topic }}</p>
                         </div>
-                        <p class="title">{{ $page.Title }}</p>
-                        <p class="published">{{ $page.Date.Format "January 2, 2006" }}</p>
+                        <p class="post-title">{{ $page.Title }}</p>
+                        <p class="post-publish">{{ $page.Date.Format "January 2, 2006" }}</p>
                     </div>
                 </div>
             </div>
