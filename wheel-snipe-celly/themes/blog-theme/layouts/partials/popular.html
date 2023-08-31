@@ -5,7 +5,7 @@
 
     <div class="app__popular-carousel">
         <i data-feather="chevron-left" class="carousel-chevron carousel-chevron-left"></i>
-        {{ $recentPosts := first 3 .Site.RegularPages }}
+        {{ $recentPosts := .Site.RegularPages }}
         {{ range $index, $page := $recentPosts }}
         <div class="carousel-card">
             <div class="post-img">
@@ -20,5 +20,4 @@
         {{ end }}
         <i data-feather="chevron-right" class="carousel-chevron carousel-chevron-right"></i>
     </div>
-
 </div>

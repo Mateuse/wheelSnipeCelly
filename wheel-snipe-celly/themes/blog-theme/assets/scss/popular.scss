@@ -57,7 +57,7 @@
             overflow: hidden;
 
             .post-topic {
-                padding: 0.5rem 0 0 1rem;
+                padding: 1rem 0 0 1rem;
                 margin: 0;
                 font-weight: 800;
             }
@@ -76,7 +76,7 @@
 
             .post-publish {
                 margin-top: auto;
-                padding: 0 1rem 1rem 1rem;
+                padding: 0 1rem 0.5rem 1rem;
             }
         }
     }
@@ -98,11 +98,11 @@
     }
     
     .carousel-chevron-left {
-        left: -2.2rem;
+        left: -2.1rem;
     }
     
     .carousel-chevron-right {
-        right: -2.3rem;
+        right: -1.1rem;
     }
 
     @media screen and (max-width: 1000) {
