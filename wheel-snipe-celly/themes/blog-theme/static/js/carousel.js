@@ -1,36 +1,62 @@
-const amountVisible = function() {
-    const width = window.innerWidth;
-    if(width < 700) {
-        return 1;
-    } else if (width > 700 && width < 1000) {
-        return 2;
-    } else if (width > 1000 && width < 2000) {
-        return 3;
-    } else {
-        return 4;
+document.addEventListener('DOMContentLoaded', function() {
+    const popularCarousel = document.querySelector(".app__popular-carousel");
+    const chevronLeft = document.querySelector(".carousel-chevron-left");
+    const chevronRight = document.querySelector(".carousel-chevron-right");
+    let currentIndex = 0;
+    const totalPosts = popularCarousel.querySelectorAll('.carousel-card').length;
+
+    function toggleChevronVisibility() {
+        chevronLeft.style.display = (currentIndex <= 0) ? 'none' : 'inline';
+        chevronRight.style.display = (currentIndex >= totalPosts - amountVisible()) ? 'none' : 'inline';
     }
-};
 
-document.addEventListener('DOMContentLoaded', function () {
-    const popularCarousel = document.querySelectorAll(".app__popular-carousel");
-
-    popularCarousel.forEach(function(carousel) {
-        const posts = Array.from(carousel.querySelectorAll('.carousel-card'))
-        
-        const hidden = [];
-        let num = 0;
-        let visible = amountVisible();
-        
-        while (posts.length > visible) {
-            const removedElement = posts.splice(visible, 1)[0];
-            hidden.push(removedElement);
+    function amountVisible() {
+        const width = window.innerWidth;
+        if (width < 700) {
+            return 1;
+        } else if (width >= 700 && width < 1000) {
+            return 2;
+        } else {
+            return 3;
         }
+    }
 
-        hidden.forEach(function(element) {
-            element.parentNode.removeChild(element); // Remove the parent container
+    chevronLeft.addEventListener('click', function() {
+        if(currentIndex > 0) {
+            currentIndex -= 1;
+            updateCarousel();
+            toggleChevronVisibility();
+        }
+    });
+
+    chevronRight.addEventListener('click', function() {
+        if(currentIndex < totalPosts - amountVisible()) {
+            currentIndex += 1;
+            updateCarousel();
+            toggleChevronVisibility();
+        }
+    });
+
+    function updateCarousel() {
+        const posts = Array.from(popularCarousel.querySelectorAll('.carousel-card'));
+        const visible = amountVisible();
+
+        posts.forEach((post, index) => {
+            if (index >= currentIndex && index < (currentIndex + visible)) {
+                post.style.display = 'block';
+            } else {
+                post.style.display = 'none';
+            }
         });
+    }
 
-        console.log('Original Array: ', posts);
-        console.log('Hidden Array: ', hidden)
-    })
+    // Initialize
+    toggleChevronVisibility();
+    updateCarousel();
+
+    window.addEventListener('resize', function() {
+        currentIndex = 0; // Reset the index
+        updateCarousel(); // Update the carousel on screen resize
+        toggleChevronVisibility(); // Update the buttons
+    });
 });

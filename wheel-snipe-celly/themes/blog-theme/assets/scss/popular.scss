@@ -4,8 +4,12 @@
     justify-content: center;
     flex-direction: column;
 
-    @media screen and (min-width: 2000px) {
-        margin: 7.5rem 40rem 0 40rem;
+    @media screen and (min-width: 2400px) {
+        margin: 7.5rem 34rem 0 34rem;
+    }
+
+    @media screen and (min-width: 2000px) and (max-width: 2400px) {
+        margin: 5.5rem 30rem 0 30rem;
     }
 
     @media screen and (min-width: 1400px) and (max-width: 2000px) {
@@ -17,7 +21,7 @@
     }
 
     @media screen and (max-width: 1000px) {
-        margin: 2rem 1rem 0 1rem;
+        margin: 2rem 2rem 0 2.5rem;
     }
 }
 
@@ -35,7 +39,31 @@
     width: 100%;
 
     .carousel-card {
+        transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+        /* Add opacity transition */
         margin: 0 1rem 0 0;
+        transform: translateX(0);
+        /* Change initial transform */
+        opacity: 1;
+        /* Add initial opacity */
+        pointer-events: auto;
+
+        @media screen and (max-width: 700px) {
+            flex-basis: 100%;
+        }
+
+        @media screen and (min-width: 700px) and (max-width: 1000px) {
+            flex-basis: 50%;
+        }
+
+        @media screen and (min-width: 1000px) {
+            flex-basis: 33.3333%;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--color-opposite-primary);
+        }
 
         .post-img {
 
@@ -78,28 +106,13 @@
                 padding: 0 1rem 0.5rem 1rem;
             }
         }
-
-        @media screen and (max-width: 700) {
-            flex-basis: 100%;
-        }
-
-        @media screen and (min-width: 700) and (max-width: 1000) {
-            flex-basis: 50%;
-        }
-
-        @media screen and (min-width: 1000) and (max-width: 2000) {
-            flex-basis: 33.3333%;
-        }
-
-        @media screen and (min-width: 2000) {
-            flex-basis: 25%;
-        }
     }
+
     .carousel-chevron {
         position: absolute;
-        top: 50%; 
+        top: 50%;
         transform: translateY(-50%);
-    
+
         width: 2rem;
         height: 2rem;
         background-color: var(--color-secondary-light);
@@ -111,17 +124,23 @@
         border-radius: 50%;
         cursor: pointer;
     }
-    
+
     .carousel-chevron-left {
         left: -2.1rem;
     }
-    
+
     .carousel-chevron-right {
         right: -1.1rem;
     }
-
-    @media screen and (max-width: 1000) {
-        display: none;
-    }
 }
 
+.hidden {
+    transform: translateX(100%);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.carousel-moving {
+    transition: transform 0.5s ease-out;
+  }
+  
