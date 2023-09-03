@@ -6,6 +6,10 @@
 @import 'intro';
 @import 'gallery';
 @import 'popular';
+@import 'single';
+@import 'components/socialBar.scss';
+@import 'components/relatedArticles.scss';
+@import 'components/post.scss';
 
 .app {
     display: flex;
@@ -17,7 +21,7 @@
     padding: 0;
     margin: 0;
     scroll-behavior: smooth;
-    font-family: 'Inter';
+    font-family: 'Roboto';
 }
 
 html::before {

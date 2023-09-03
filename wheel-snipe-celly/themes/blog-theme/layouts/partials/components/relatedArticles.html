@@ -1,0 +1,14 @@
+<div class="related-articles">
+    <p class="related-articles-header">You might also like:</p>
+    {{ $relatedPosts := .Site.RegularPages.ByDate.Reverse }}
+    {{ range $index, $page := $relatedPosts }}
+        <div class="related-articles-article">
+            <a href="{{ .Permalink }}">
+                {{ $page.Title }}
+            </a>
+        </div>
+    {{ end }}
+    <div class="related-articles-see-more">
+        <a href="#">See All Popular Posts</a>
+    </div>
+</div>

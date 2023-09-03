@@ -1,0 +1,25 @@
+.related-articles {
+    border-left: 1px solid black;
+
+    .related-articles-header {
+        padding: 0.5rem 0 0 1rem;
+        font-size: 1.3rem;
+        font-weight: 900;
+    }
+
+    .related-articles-article {
+        margin: 1rem 0 0 1rem;
+        font-size: 1.3rem;
+        font-weight: 900;
+    }
+
+    .related-articles-see-more {
+        margin: 2rem 0 0 1rem;
+        a {
+            font-weight: 900;
+            text-decoration: underline;
+            color: var(--color-opposite-primary);
+        }
+    }
+}
+
