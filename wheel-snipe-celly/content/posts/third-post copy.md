@@ -3,6 +3,7 @@ title: "Third Post COPy"
 date: 2023-08-28T13:15:04-07:00
 topic: "Topic 3"
 draft: true
+subtopic: ["Topic 3", "topic 2", "topic 3"]
 ---
 ## Introduction
 

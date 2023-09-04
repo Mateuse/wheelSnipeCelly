@@ -141,7 +141,7 @@
         .topic-container {
             display: inline-block;
             overflow: hidden;
-            background: rgba(0, 0, 0, 0.6);
+            background: var(--color-bubble-background);
             border-radius: 10px;
             padding: .3rem .5rem .3rem .5rem;
             white-space: nowrap;

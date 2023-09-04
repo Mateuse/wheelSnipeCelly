@@ -4,6 +4,7 @@ date: 2023-08-31T13:20:24-07:00
 topic: "Topic 1"
 draft: true
 sumarry: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas at dui vitae dolor molestie iaculis. Integer aliquet pellentesque quam et. 
+subtopic: ["Topic 3", "topic 2", "topic 3"]
 ---
 
 ## McJesus

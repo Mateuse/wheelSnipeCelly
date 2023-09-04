@@ -2,7 +2,7 @@
 title: "Fifth Post"
 date: 2023-08-28T13:15:04-07:00
 topic: "Topic 3"
-subtopic: ["topic 2", "topic 3"]
+subtopic: ["Topic 3", "topic 2", "topic 3"]
 draft: true
 ---
 ## Introduction
