@@ -12,9 +12,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function amountVisible() {
         const width = window.innerWidth;
-        if (width < 700) {
+        if (width < 525) {
             return 1;
-        } else if (width >= 700 && width < 1000) {
+        } else if (width >= 525 && width < 1000) {
             return 2;
         } else {
             return 3;
@@ -49,6 +49,8 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+
+    setTimeout(updateCarousel, 100); 
 
     // Initialize
     toggleChevronVisibility();
