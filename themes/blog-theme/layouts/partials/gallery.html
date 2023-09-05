@@ -8,7 +8,7 @@
         <div class="post-container-main">
             {{ with index $recentPosts 0 }}
             <a href="{{ .Permalink }}">
-                <div class="post-recent" style="background-image: url('/posts/{{ .File.BaseFileName }}/main.jpg')">
+                <div class="post-recent" style="background-image: url('/posts/{{ .File.BaseFileName }}/main-gallery.jpg')">
                     <div class="overlay">
                         <div class="overlay-info">
                             <div class="topic-container">
@@ -25,7 +25,7 @@
         <div class="post-container">
             {{ with index $recentPosts 1 }}
             <a href="{{ .Permalink }}">
-                <div class="post" style="background-image: url('/posts/{{ .File.BaseFileName }}/main.jpg')">
+                <div class="post" style="background-image: url('/posts/{{ .File.BaseFileName }}/main-gallery.jpg')">
                     <div class="overlay">
                         <div class="overlay-info">
                             <div class="topic-container">
@@ -40,7 +40,7 @@
             {{ end }}
             {{ with index $recentPosts 2 }}
             <a href="{{ .Permalink }}">
-                <div class="post" style="background-image: url('/posts/{{ .File.BaseFileName }}/main.jpg')">
+                <div class="post" style="background-image: url('/posts/{{ .File.BaseFileName }}/main-gallery.jpg')">
                     <div class="overlay">
                         <div class="overlay-info">
                             <div class="topic-container">
@@ -59,7 +59,7 @@
         {{ $recentPosts := first 3 .Site.RegularPages.ByDate.Reverse }}
         {{ range $index, $page := $recentPosts }}
         <a href="{{ $page.Permalink}}">
-            <div class="post" style="background-image: url('/posts/{{ .File.BaseFileName }}/main.jpg');">
+            <div class="post" style="background-image: url('/posts/{{ .File.BaseFileName }}/main-gallery.jpg');">
                 <div class="overlay">
                     <div class="overlay-info">
                         <div class="topic-container">
