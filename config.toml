@@ -1,4 +1,4 @@
-baseURL = 'http://example.org/'
+baseURL = 'https://wheelsnipecelly.info/'
 languageCode = 'en-us'
 title = 'Wheel Snipe Celly'
 theme = 'blog-theme'
