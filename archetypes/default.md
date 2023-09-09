@@ -1,6 +1,9 @@
 ---
 title: "{{ replace .Name "-" " " | title }}"
 date: {{ .Date }}
+topic: ""
+summary: ""
+subtopic: []
 draft: true
 ---
 
