@@ -1,0 +1,23 @@
+.app__footer {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-secondary);
+    margin-top: 4rem;
+    color: var(--color-primary);
+
+    .copyright {
+        margin: auto;
+        padding: 1rem;
+    }
+
+    .footer-row {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0 1rem 1rem 1rem;
+
+        .contact a{
+            color: var(--color-primary);
+        }
+    }
+}
