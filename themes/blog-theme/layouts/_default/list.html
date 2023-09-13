@@ -1,12 +1,11 @@
 {{ define "main" }}
-<h1>{{ .Title }}</h1>
-{{ range .Pages.ByPublishDate.Reverse }}
-<p>
-    <h3><a class="title" href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-
-    <a class="summary" href="{{ .RelPermalink }}">
-        <p>{{ .Summary }}</p>
-    </a>
-</p>
-{{ end }}
+    {{ if eq .Section "topics"}}
+        <div class="list-page-container">
+            {{ partial "components/topics/topics.html" . }}
+        </div>
+    {{ else if eq .Section "top-stories" }}
+        <div class="list-page-container">
+            Top Stories
+        </div>
+    {{ end }}
 {{ end }}

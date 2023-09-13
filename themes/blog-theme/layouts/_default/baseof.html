@@ -5,15 +5,15 @@
 <body>
     <div class="app">
         {{- partial "header.html" . -}}
-        {{ if .IsHome }}
-            {{- partial "intro.html" . -}}
-            {{- partial "gallery.html" . -}}
-            {{- partial "popular.html" . -}}
-        {{ else }}
-            {{ block "main" . }}
-
+        <div class="content-wrap">
+            {{ if .IsHome }}
+                {{- partial "intro.html" . -}}
+                {{- partial "gallery.html" . -}}
+                {{- partial "popular.html" . -}}
+            {{ else }}
+                {{ block "main" . }}{{ end }}
             {{ end }}
-        {{ end }}
+        </div>
         {{- partial "footer.html" . -}}
         {{- partial "script.html" . -}}
     </div>

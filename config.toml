@@ -5,3 +5,9 @@ theme = 'blog-theme'
 
 [params]
     slogan = 'Breaking the ice, Analyzing the beauty of the game'
+
+[data]
+    enable = true
+
+[permalinks]
+    topics = "/:slug/"

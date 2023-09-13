@@ -1,0 +1,13 @@
+<h1>Topics</h1>
+<div class="topics-container">
+    {{ range .Site.Data.topics }}
+    <div class="topic-item">
+        <a href="/topics/{{ .slug }}">
+            {{ if .image }}
+            <img src="{{ .image }}" alt="{{ .name }}">
+            {{ end }}
+            <h2>{{ .name }}</h2>
+        </a>
+    </div>
+    {{ end }}
+</div>
