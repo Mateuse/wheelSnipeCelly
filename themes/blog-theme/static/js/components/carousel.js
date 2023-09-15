@@ -12,12 +12,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function amountVisible() {
         const width = window.innerWidth;
-        if (width < 525) {
+        if (width < 500) {
             return 1;
-        } else if (width >= 525 && width < 1000) {
+        }
+        else if (width >= 500 && width < 700) {
             return 2;
-        } else {
+        } else if (width >= 700 && width < 1120) {
             return 3;
+        } else if (width >= 1120 && width <= 1440) {
+            return 4;
+        } else {
+            return 4;
         }
     }
 

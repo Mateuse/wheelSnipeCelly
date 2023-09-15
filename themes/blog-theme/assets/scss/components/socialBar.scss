@@ -4,11 +4,28 @@
     align-items: center;
     
     .social-bar-img {
-        width: 30px;
+        width: 25px;
         margin-right: 1rem;
 
         &:last-child {
             margin-right: 0;
         }
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+}
+
+.social-bar-msg {
+    display: flex;
+
+    p {
+        font-size: calc(0.8rem + 0.2vw);
+        font-weight: 800;
+        margin: auto;
+        margin-top: -0.4rem;
+        margin-bottom: 0.4rem;
     }
 }
