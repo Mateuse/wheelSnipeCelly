@@ -11,3 +11,12 @@ mid text:
     100% opacity
     10px size
     10px distance
+
+Double picture:
+    640px w by 550px h
+
+Single picture:
+    1280px w by 550px h
+
+Line colors:
+    Swatches => RGB => Red
