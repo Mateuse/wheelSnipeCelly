@@ -2,6 +2,7 @@ baseURL = 'https://wheelsnipecelly.info/'
 languageCode = 'en-us'
 title = 'Wheel Snipe Celly'
 theme = 'blog-theme'
+googleAnalytics = G-F2NWCW4R1T
 
 [params]
     slogan = 'Breaking the ice, Analyzing the beauty of the game'
