@@ -1,14 +1,14 @@
-<div class="topic-card">
+<div class="topic-card" style="background-image: url('/topics/{{ .slug }}.jpg')">
     <a href="/topics/{{ .slug }}">
-        <div class="topic-card-image">
-            <img src="{{ .image }}" />
-        </div>
-        <div class="topic-card-info">
-            <div class="topic-card-description">
-                {{ .description }}
+        <div class="overlay">
+            <div class="topic-card-image">
+                <p class="overlay-topic-title">{{ .name }}</p>
             </div>
-            <div class="topic-card-see-more">
-                <button>See More</button>
+            <div class="topic-card-info">
+                <p class="topic-card-description">{{ .description }}</p>
+                <div class="topic-card-see-more">
+                    <button>See More</button>
+                </div>
             </div>
         </div>
     </a>
