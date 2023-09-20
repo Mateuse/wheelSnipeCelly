@@ -73,7 +73,7 @@
 
             img {
                 width: 100%;
-                height: 12rem;
+                height: 10rem;
                 border-radius: 10px 10px 0 0;
             }
         }
@@ -81,20 +81,20 @@
         .post-info {
             background-color: var(--color-secondary-light);
             border-radius: 0 0 10px 10px;
-            height: 12rem;
+            height: 10rem;
             flex-grow: 1;
             display: flex;
             flex-direction: column;
             overflow: hidden;
 
             .post-topic {
-                padding: 1rem 0 0 1rem;
+                padding: 0.5rem 0 0 1rem;
                 margin: 0;
                 font-weight: 800;
             }
 
             .post-title {
-                padding: 1rem;
+                padding: 0.5rem 1rem 0.5rem 1rem;
                 margin: 0;
                 font-size: 1.5rem;
                 font-weight: bold;
@@ -106,8 +106,7 @@
             }
 
             .post-publish {
-                margin-top: auto;
-                padding: 0 1rem 0.5rem 1rem;
+                padding: 1rem 1rem 0rem 1rem;
             }
         }
     }
