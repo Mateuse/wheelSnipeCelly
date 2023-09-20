@@ -6,7 +6,7 @@ $subtopicsArray = $subtopicsInput -split '\s*,\s*'
 
 # Date and Slug
 $currentDate = Get-Date -Format "yyyy-MM-ddTHH:mm:ss-07:00"
-$postSlug = $postName -replace '\s+', '-'
+$postSlug = $postName -replace '-', '\s+'
 
 # Create the Markdown file
 $postPath = ".\content\posts\$postSlug.html"
