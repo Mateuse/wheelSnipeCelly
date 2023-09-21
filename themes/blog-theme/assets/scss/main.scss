@@ -8,12 +8,16 @@
 @import 'popular';
 @import 'single';
 @import 'footer';
+
 @import 'components/socialBar.scss';
 @import 'components/relatedArticles.scss';
 @import 'components/postPage/post.scss';
+
 @import 'components/topicsList.scss';
 @import 'components/topics/topicPage.scss';
 @import 'components/topics/topicCard.scss';
+
+@import 'components/common/search.scss';
 
 .app {
     display: flex;

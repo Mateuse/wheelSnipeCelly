@@ -1,0 +1,16 @@
+.search-field-container {
+    display: flex;
+    justify-content: row;
+    margin: 2rem 0 2rem 0.625rem;
+
+    input[type="text"] {
+        border: none;
+        border-bottom: 2px solid var(--color-black);
+        outline: none;
+        text-align: center;
+    }
+
+    img {
+        cursor: pointer;
+    }
+}

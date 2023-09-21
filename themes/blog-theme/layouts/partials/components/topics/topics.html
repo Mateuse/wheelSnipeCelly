@@ -1,8 +1,14 @@
 <div class="topics-page-container">
     <h1>Topics</h1>
+    <div class="topic-filters-container">
+        {{- partial "components/common/search.html" . }}
+        <div class="topics-filter-btn">
+            <img src="/assets/filter.svg" />
+        </div>
+    </div>
     <div class="topics-content">
         {{ range .Site.Data.topics }}
-        {{- partial "components/topics/topicsCard.html" . }}
+            {{- partial "components/topics/topicsCard.html" . }}
         {{ end }}
     </div>
 </div>

@@ -47,6 +47,17 @@
         margin: 2rem 2rem 0 2.5rem;
     }
 
+    .topic-filters-container {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+
+        .topics-filter-btn {
+            margin: 2rem 0 2rem 0;
+            cursor: pointer;
+        }
+    }
+
     .topics-content {
         display: flex;
         flex-wrap: wrap;
