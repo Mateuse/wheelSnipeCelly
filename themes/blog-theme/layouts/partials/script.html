@@ -1,10 +1,22 @@
-
-<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 
 <script src="/js/script.js"></script>
-<script src="/js/components/carousel.js"></script>
-<script src="/js/components/relatedArticles.js"></script>
-<script src="/js/components/searchTopics.js"></script>
+{{ if eq .RelPermalink "/"}}
+    <script src="/js/components/carousel.js"></script>
+{{ end }}
+
+{{ with .Section }}
+  {{ if eq . "post" }}
+    <script src="/js/components/relatedArticles.js"></script>
+  {{ end }}
+{{ end }}
+
+
+{{ if eq .RelPermalink "/topics/" }}
+    <script src="/js/components/searchTopics.js"></script>
+{{ end }}
+
 
 <script src="/js/feather.min.js"></script>
 <script>
