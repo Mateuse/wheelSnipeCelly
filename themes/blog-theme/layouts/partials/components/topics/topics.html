@@ -3,16 +3,32 @@
     <div class="topic-filters-container">
         {{- partial "components/topics/search.html" . }}
         <div class="topics-filter-btn">
-            <img src="/assets/filter.svg" alt="filter"/>
+            <img src="/assets/filter.svg" alt="filter" />
         </div>
     </div>
     <div class="topics-content">
-        {{ with . }}
-        {{ range .Site.Data.topics }}
-            <div class="topic-card-container" data-topic="{{ .name | lower }}">
-                {{- partial "components/topics/topicsCard.html" (dict "Topic" . "Site" $.Site) }}
+        {{ $allTopics := slice }}
+        {{ range where $.Site.Pages "Section" "topics" }}
+            {{ if ne .Params.slug "" }}
+                {{ $topicPage := . }}
+                {{ $count := 0 }}
+                {{ range $.Site.RegularPages }}
+                    {{ if or (eq .Params.topic $topicPage.Params.name) (in .Params.subtopic $topicPage.Params.name) }}
+                        {{ $count = add $count 1 }}
+                    {{ end }}
+                {{ end }}
+                {{ $allTopics = $allTopics | append (dict "Page" . "Count" $count) }}
+            {{ end }}
+        {{ end }}
+        
+        {{ $sortedTopics := sort $allTopics "Count" "desc" }}
+
+        {{ range $sortedTopics }}
+            <div class="topic-card-container" data-topic="{{ .Page.Params.slug | lower }}">
+                {{- partial "components/topics/topicsCard.html" (dict "Page" .Page "Count" .Count) }}
             </div>
         {{ end }}
-        {{ end }}
+
+        
     </div>
 </div>

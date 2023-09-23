@@ -1,4 +1,4 @@
-.topic-page {
+.topics-page-container {
     display: flex;
     flex-direction: column;
 
@@ -47,32 +47,28 @@
         margin: 2rem 2rem 0 2.5rem;
     }
 
-    .topic-articles {
+    .topic-filters-container {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+
+        .topics-filter-btn {
+            margin: 2rem 0 2rem 0;
+            cursor: pointer;
+        }
+    }
+
+    .topics-content {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-evenly;
         align-items: flex-start;
-        max-height: calc(3 * (
-                    /* height of one card */
-                ));
+        max-height: calc(3 * (/* height of one card */));
         overflow: hidden;
-        flex: 0 0 calc(33.333% - 20px);
-        margin: 10px;
 
-        .topic-post-item {
+        .topic-card-container {
+            flex: 0 0 calc(33.333% - 20px);
             margin: 10px;
-            border-radius: 10px;
-            overflow: hidden;
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center;
-            
-            width: 20rem;
-            height: 15rem;
-
-            a {
-                text-decoration: none;
-            }
         }
-    }
+      }
 }

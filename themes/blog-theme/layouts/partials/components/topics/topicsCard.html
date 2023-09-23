@@ -1,25 +1,16 @@
-<div class="topic-card" style="background-image: url('/topics/{{ .Topic.slug }}.jpg')">
-    <a href="/topics/{{ .Topic.slug }}">
+<div class="topic-card" style="background-image: url('/topics/{{ .Page.Params.slug }}.jpg')">
+    <a href="/topics/{{ .Page.Params.slug }}">
         <div class="overlay">
             <div class="topic-card-image">
-                <p class="overlay-topic-title">{{ .Topic.name }}</p>
+                <p class="overlay-topic-title">{{ .Page.Params.name }}</p>
             </div>
             <div class="topic-card-info">
-                <p class="topic-card-description">{{ .Topic.description }}</p>
+                <p class="topic-card-description">{{ .Page.Params.description }}</p>
             </div>
             <div class="topic-article-count">
-                {{ $count := 0 }}
-                {{ with .Site }}
-                {{ range .RegularPages }}
-                    {{ if or (eq .Params.topic $.Topic.name) (in .Params.subtopic $.Topic.name) }}
-                        {{ $count = add $count 1 }}
-                    {{ end }}
-                {{ end }}
-                {{ end }}
-                {{ $count }}
+                {{ .Count }}
                 <i data-feather="book-open" id="topic-card-book-open"></i>
             </div>
         </div>
     </a>
 </div>
-
