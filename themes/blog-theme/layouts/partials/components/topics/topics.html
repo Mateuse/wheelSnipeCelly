@@ -3,14 +3,16 @@
     <div class="topic-filters-container">
         {{- partial "components/topics/search.html" . }}
         <div class="topics-filter-btn">
-            <img src="/assets/filter.svg" />
+            <img src="/assets/filter.svg" alt="filter"/>
         </div>
     </div>
     <div class="topics-content">
+        {{ with . }}
         {{ range .Site.Data.topics }}
             <div class="topic-card-container" data-topic="{{ .name | lower }}">
-                {{- partial "components/topics/topicsCard.html" . }}
+                {{- partial "components/topics/topicsCard.html" (dict "Topic" . "Site" $.Site) }}
             </div>
         {{ end }}
-    </div>    
+        {{ end }}
+    </div>
 </div>

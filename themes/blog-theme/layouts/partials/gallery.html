@@ -4,7 +4,7 @@
         <p class="p-heading-selections">View all</p>
     </div>
     <div id="app__gallery-items">
-        {{ $recentPosts := first 3 .Site.RegularPages.ByDate.Reverse }}
+        {{ $recentPosts := first 3 (where .Site.RegularPages.ByDate.Reverse "Params.type" "eq" "post") }}
         <div class="post-container-main">
             {{ with index $recentPosts 0 }}
             <a href="{{ .Permalink }}">
@@ -56,7 +56,7 @@
         </div>
     </div>
     <div id="app__gallery-items-mobile">
-        {{ $recentPosts := first 3 .Site.RegularPages.ByDate.Reverse }}
+        {{ $recentPosts := first 3 (where .Site.RegularPages.ByDate.Reverse "Params.type" "eq" "post" )}}
         {{ range $index, $page := $recentPosts }}
         <a href="{{ $page.Permalink}}">
             <div class="post" style="background-image: url('/posts/{{ .File.BaseFileName }}/main.jpg');">

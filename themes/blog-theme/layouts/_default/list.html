@@ -1,11 +1,2 @@
 {{ define "main" }}
-    {{ if eq .Section "topics"}}
-        <div class="list-page-container">
-            {{ partial "components/topics/topics.html" . }}
-        </div>
-    {{ else if eq .Section "top-stories" }}
-        <div class="list-page-container">
-            Top Stories
-        </div>
-    {{ end }}
 {{ end }}

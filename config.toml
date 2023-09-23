@@ -9,6 +9,3 @@ googleAnalytics = "G-F2NWCW4R1T"
 
 [data]
     enable = true
-
-[permalinks]
-    topics = "/:slug/"

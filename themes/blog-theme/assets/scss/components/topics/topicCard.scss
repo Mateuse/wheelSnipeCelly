@@ -68,4 +68,17 @@
       }
     }
   }
+
+  .topic-article-count {
+    display: flex;
+    justify-content: right;
+
+    * {
+      padding-left: 0.5rem;
+    }
+
+    img[src*='.svg'] {
+      filter: hue-rotate(180deg);
+    }
+  }
 }
