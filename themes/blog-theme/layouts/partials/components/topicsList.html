@@ -1,8 +1,10 @@
-<div class="topic-list">
-    <ul>
-        {{ $firstThree := first 3 .Params.subtopic }}
-        {{ range $firstThree }}
-        <li>{{ . }}</li>
-        {{ end }}
-    </ul>
-</div>
+{{ with .Params.subtopic }}
+    <div class="topic-list">
+        <ul>
+            {{ $firstThree := first 3 . }}
+            {{ range $firstThree }}
+            <li>{{ . }}</li>
+            {{ end }}
+        </ul>
+    </div>
+{{ end }}
