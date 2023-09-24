@@ -1,10 +1,8 @@
-{{ if and (.Params.subtopic) (ge (len .Params.subtopic) 3) }}
-    <div class="topic-list">
-        <ul>
-            {{ $firstThree := first 3 .Params.subtopic }}
-            {{ range $firstThree }}
-                <li>{{ . }}</li>
-            {{ end }}
-        </ul>
-    </div>
-{{ end }}
+<div class="topic-list">
+    <ul>
+        {{ $firstThree := first 3 .Params.subtopic }}
+        {{ range $firstThree }}
+        <li>{{ . }}</li>
+        {{ end }}
+    </ul>
+</div>
