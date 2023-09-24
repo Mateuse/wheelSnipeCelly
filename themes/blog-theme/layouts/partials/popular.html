@@ -5,7 +5,7 @@
 
     <div class="app__popular-carousel">
         <i data-feather="chevron-left" class="carousel-chevron carousel-chevron-left"></i>
-        {{ $recentPosts := .Site.RegularPages.ByDate.Reverse }}
+        {{ $recentPosts := (where .Site.RegularPages.ByDate.Reverse "Params.type" "eq" "post" )}}
         {{ range $index, $page := $recentPosts }}
         <div class="carousel-card">
             <a href="{{ .Permalink }}">
