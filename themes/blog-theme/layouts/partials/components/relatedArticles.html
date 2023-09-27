@@ -1,6 +1,6 @@
 <div class="related-articles">
     <p class="related-articles-header">You might also like:</p>
-    {{ $relatedPosts := .Site.RegularPages.ByDate.Reverse }}
+    {{ $relatedPosts := first 6 (where .Site.RegularPages.ByDate.Reverse "Params.type" "eq" "post") }}
     {{ range $index, $page := $relatedPosts }}
         <div class="related-articles-article">
             <a href="{{ .Permalink }}">
