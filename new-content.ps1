@@ -9,7 +9,7 @@ $currentDate = Get-Date -Format "yyyy-MM-ddTHH:mm:ss-07:00"
 $postSlug = $postName -replace '-', '\s+'
 
 # Create the Markdown file
-$postPath = ".\content\posts\$postSlug.html"
+$postSlug = ($postName -replace '\s+', '-').ToLower()
 
 # Front matter
 $frontMatter = @"
@@ -20,42 +20,39 @@ topic: "$postTopic"
 summary: "This is a summary."
 subtopic: ["$($subtopicsArray -join '", "')"]
 draft: true
+type: "post"
 ---
 "@
 # Write the front matter to the new post file
 $frontMatter | Set-Content -Path $postPath
 
-# Check and update topics.yaml
-$topicsPath = ".\data\topics.yaml"
-
-# Add main topic if not exists
-$topicExists = Select-String -Path $topicsPath -Pattern "name: `"$postTopic`""
-if (-not $topicExists) {
-    $newTopic = @"
-- name: "$postTopic"
-  slug: "$(($postTopic -replace '\s+', '-').ToLower())"
-  description: "Default Description"
-  image: "/topics/$(($postTopic -replace '\s+', '-').ToLower()).jpg"
+# Function to create a topic file if it doesn't exist
+Function Create-TopicFile ($topicName) {
+    $topicSlug = ($topicName -replace '\s+', '-').ToLower()
+    $topicPath = ".\content\topics\$topicSlug.md"
+    if (-not (Test-Path -Path $topicPath)) {
+        $newTopicFrontMatter = @"
+---
+title: "$topicName"
+name: "$topicName"
+slug: "$topicSlug"
+description: "Default Description"
+image: "/topics/$topicSlug.jpg"
+draft: false
+---
 "@
-    $newTopic | Add-Content -Path $topicsPath
-    Write-Host "Added new topic to topics.yaml."
-}
-
-# Add subtopics if they do not exist
-foreach ($subtopic in $subtopicsArray) {
-    $subtopicExists = Select-String -Path $topicsPath -Pattern "name: `"$subtopic`""
-    if (-not $subtopicExists) {
-        $newSubTopic = @"
-- name: "$subtopic"
-  slug: "$(($subtopic -replace '\s+', '-').ToLower())"
-  description: "Default Description"
-  image: "/topics/$(($subtopic -replace '\s+', '-').ToLower()).jpg"
-"@
-        $newSubTopic | Add-Content -Path $topicsPath
-        Write-Host "Added new subtopic $subtopic to topics.yaml."
+        $newTopicFrontMatter | Set-Content -Path $topicPath
+        Write-Host "Added new topic $topicName to content/topics."
     }
 }
 
+# Check and create topic file for the main topic
+Create-TopicFile -topicName $postTopic
+
+# Check and create topic files for subtopics
+foreach ($subtopic in $subtopicsArray) {
+    Create-TopicFile -topicName $subtopic
+}
 # Create the Markdown file
 $postPath = ".\content\posts\$postSlug.md"
 
