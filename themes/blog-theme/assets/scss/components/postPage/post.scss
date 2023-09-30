@@ -90,18 +90,6 @@
 
         .post-content {
             width: 100%;
-
-            @media (max-width: 767px) {
-                width: 100%;
-            }
-
-            @media (min-width: 768px) {
-                width: calc(90% - 2rem);
-            }
-
-            @media (min-width: 1024px) {
-                width: calc(80% - 2rem);
-            }
         }
 
         .post-summary {
@@ -157,6 +145,14 @@
 
         .post-container-sidebar {
             margin: 6rem 0 0 1.5rem;
+
+            @media (min-width: 768px) {
+                max-width: 12rem;
+            }
+
+            @media (min-width: 1024px) {
+                max-width: 15rem;
+            }
 
             @media screen and (max-width: 767px) {
                 display: none;
