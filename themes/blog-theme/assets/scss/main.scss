@@ -13,10 +13,12 @@
 @import 'components/relatedArticles.scss';
 @import 'components/postPage/post.scss';
 
-@import 'components/topicsList.scss';
-@import 'components/topics/topics.scss';
-@import 'components/topics/topicCard.scss';
-@import 'components/topics/topicPage.scss';
+@import 'topics/topicsList.scss';
+@import 'topics/topics.scss';
+@import 'topics/topicCard.scss';
+@import 'topics/topicPage.scss';
+
+@import 'top-stories/list.scss';
 
 @import 'components/common/search.scss';
 

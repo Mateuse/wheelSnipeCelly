@@ -1,0 +1,19 @@
+{{ define "main"}}
+    <div class="top-stories-page">
+        <h1>Top Stories</h1>
+        <div class="top-stories-articles articles-display">
+            {{ $topStories := first 9 (where .Site.RegularPages.ByDate.Reverse "Params.type" "eq" "post")}}
+            {{ range $topStories }}
+            <div class="post-item top-stories-post-item" style="background-image: url('/posts/{{ .File.BaseFileName }}/main.jpg')">
+                <a href="{{ .Permalink }}">
+                    <div class="overlay">
+                        <div class="post-item-image">
+                            <p class="overlay-post-title">{{ .Params.title }}</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+{{end}}
