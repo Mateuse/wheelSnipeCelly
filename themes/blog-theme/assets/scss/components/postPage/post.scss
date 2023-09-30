@@ -2,37 +2,15 @@
     display: flex;
     flex-direction: column;
 
-    .post-title {
+    h1 {
         width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
         text-align: center;
-
-        p {
-            font-weight: 900;
-            line-height: 1.12;
-            letter-spacing: 1.5px;
-            font-size: calc(1rem + 1vw);
-
-            @media screen and (max-width: 699px) {
-                padding-top: 2rem;
-                line-height: 2.5rem;
-                font-size: 2.5rem;
-            }
-
-            @media screen and (min-width: 700px) and (max-width: 999px) {
-                padding: 3rem 1rem 0 1rem;
-                line-height: 3rem;
-                font-size: 3rem;
-            }
-
-            @media screen and (min-width: 1000px) {
-                font-size: 4.5rem;
-                font-weight: 900;
-                padding-top: 2rem;
-            }
-        }
+        font-weight: 900;
+        line-height: 1.12;
+        letter-spacing: 1.5px;
     }
 
     .post-heading {

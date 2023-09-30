@@ -1,37 +1,35 @@
-<div class="page-post">
-        <div class="post-title">
-            <p>{{ .Title }}</p>
-        </div>
-        <div class="post-heading">
-            <span class="post-date-published">
-                <p class="post-date-published-heading">Date Published</p>
-                <p class="post-date-published-date">{{ .Date.Format "January 2, 2006" }}</p>
-            </span>
-            <span class="post-heading-divider">
-                /
-            </span>
-            <span class="post-social-bar">
-                {{- partial "components/socialBar.html" . }}
-            </span>
-        </div>
-        <div class="post-image">
-            <img src="/posts/{{ $.File.BaseFileName }}/main.jpg" alt="{{ $.File.BaseFileName }}" />
-        </div>
-        <div class="post-topics-list">
-            {{- partial "components/topicsList.html" . }}
-        </div>
-        <div class="post-body-container">
-            <div class="post-content">
-                <div class="post-summary">
-                    <p>{{ .Params.summary }}</p>
-                </div>
-                <div class="post-body">
-                    {{ .Content | safeHTML }}
-                </div>
+<div class="app__page page-post">
+    <h1>{{ .Title }}</h1>
+    <div class="post-heading">
+        <span class="post-date-published">
+            <p class="post-date-published-heading">Date Published</p>
+            <p class="post-date-published-date">{{ .Date.Format "January 2, 2006" }}</p>
+        </span>
+        <span class="post-heading-divider">
+            /
+        </span>
+        <span class="post-social-bar">
+            {{- partial "components/socialBar.html" . }}
+        </span>
+    </div>
+    <div class="post-image">
+        <img src="/posts/{{ $.File.BaseFileName }}/main.jpg" alt="{{ $.File.BaseFileName }}" />
+    </div>
+    <div class="post-topics-list">
+        {{- partial "components/topicsList.html" . }}
+    </div>
+    <div class="post-body-container">
+        <div class="post-content">
+            <div class="post-summary">
+                <p>{{ .Params.summary }}</p>
             </div>
-            <div class="post-container-sidebar">
-                {{- partial "components/relatedArticles.html" . }}
+            <div class="post-body">
+                {{ .Content | safeHTML }}
             </div>
+        </div>
+        <div class="post-container-sidebar">
+            {{- partial "components/relatedArticles.html" . }}
         </div>
     </div>
+</div>
 </div>

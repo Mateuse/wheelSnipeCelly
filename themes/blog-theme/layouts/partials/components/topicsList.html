@@ -3,7 +3,10 @@
         <ul>
             {{ $firstThree := first 3 . }}
             {{ range $firstThree }}
-            <li>{{ . }}</li>
+                {{ $slug := replace (lower .) " " "-" }}
+                <a href="/topics/{{ $slug }}">
+                    <li>{{ . }}</li>
+                </a>
             {{ end }}
         </ul>
     </div>

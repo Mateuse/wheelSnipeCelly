@@ -1,5 +1,5 @@
 {{ define "main"}}
-    <div class="top-stories-page">
+    <div class="app__page top-stories-page">
         <h1>Top Stories</h1>
         <div class="top-stories-articles articles-display">
             {{ $topStories := first 9 (where .Site.RegularPages.ByDate.Reverse "Params.type" "eq" "post")}}

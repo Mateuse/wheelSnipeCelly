@@ -1,11 +1,11 @@
-<div class="topic-page">
+<div class="app__post topic-page">
     <h1 class="topic-item-title">{{ .Name }}</h1>
-    <div class="topic-articles">
+    <div class="topic-articles articles-display">
         {{ $topicName := .Params.name }}
             
             {{ range where site.RegularPages "Type" "post" }}
                 {{ if or (eq .Params.topic $topicName) (in .Params.subtopic $topicName) }}
-                    <div class="topic-post-item" style="background-image: url('/posts/{{ .File.BaseFileName }}/main.jpg')">
+                    <div class="post-item topic-post-item" style="background-image: url('/posts/{{ .File.BaseFileName }}/main.jpg')">
                         <a href="{{ .Permalink }}">
                             <div class="overlay">
                                 <div class="topic-post-image">
