@@ -24,6 +24,6 @@ Line colors:
 
 Convert video to image vlc
 
-Tools -> Preferences -> Left bottom corner -> All -> Video -> Scene Filter -> Select directory -> Click on filter and select scene video filter -> Play the video
+Tools -> Preferences -> Left bottom corner -> All -> Video -> Scene Filter -> Select directory -> Click on filter and select scene video filter -> Play the video (if not working load video after the above setup)
 
 Davinci resolve clip:

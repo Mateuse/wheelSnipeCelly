@@ -1,7 +1,10 @@
 <div class="related-articles">
     <p class="related-articles-header">You might also like:</p>
-    {{ $relatedPosts := first 6 (where .Site.RegularPages.ByDate.Reverse "Params.type" "eq" "post") }}
-    {{ range $index, $page := $relatedPosts }}
+    {{ $currentPage := . }}
+    {{ $relatedPosts := where .Site.RegularPages.ByDate.Reverse "Params.type" "eq" "post" }}
+    {{ $filteredPosts := where $relatedPosts "Title" "ne" $currentPage.Title }}
+    {{ $firstSix := first 6 $filteredPosts }}
+    {{ range $index, $page := $firstSix }}
         <div class="related-articles-article">
             <a href="{{ .Permalink }}">
                 {{ $page.Title }}

@@ -11,6 +11,8 @@ $postSlug = $postName -replace '-', '\s+'
 # Create the Markdown file
 $postSlug = ($postName -replace '\s+', '-').ToLower()
 
+$postPath = ".\content\posts\$postSlug.html"
+
 # Front matter
 $frontMatter = @"
 ---
