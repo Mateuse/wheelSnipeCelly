@@ -12,8 +12,14 @@
             {{ if ne .Params.slug "" }}
                 {{ $topicPage := . }}
                 {{ $count := 0 }}
+                {{ $topicNameLower := lower $topicPage.Params.name }}
                 {{ range $.Site.RegularPages }}
-                    {{ if or (eq .Params.topic $topicPage.Params.name) (in .Params.subtopic $topicPage.Params.name) }}
+                    {{ $pageTopicLower := lower .Params.topic }}
+                    {{ $pageSubtopicsLower := slice }}
+                    {{ range .Params.subtopic }}
+                        {{ $pageSubtopicsLower = $pageSubtopicsLower | append (lower .) }} 
+                    {{ end }}
+                    {{ if or (eq $pageTopicLower $topicNameLower) (in $pageSubtopicsLower $topicNameLower) }}
                         {{ $count = add $count 1 }}
                     {{ end }}
                 {{ end }}
@@ -28,7 +34,5 @@
                 {{- partial "components/topics/topicsCard.html" (dict "Page" .Page "Count" .Count) }}
             </div>
         {{ end }}
-
-        
     </div>
 </div>

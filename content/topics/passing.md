@@ -1,8 +1,8 @@
 ---
-title: "passing"
-name: "passing"
+title: "Passing"
+name: "Passing"
 slug: "passing"
-description: "Default Description"
+description: "Distributing the puck efficiently and opening up the ice"
 image: "/topics/passing.jpg"
 draft: false
 ---
