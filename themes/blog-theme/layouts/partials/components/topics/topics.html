@@ -23,7 +23,9 @@
                         {{ $count = add $count 1 }}
                     {{ end }}
                 {{ end }}
-                {{ $allTopics = $allTopics | append (dict "Page" . "Count" $count) }}
+                {{ if gt $count 0 }} <!-- Corrected line -->
+                    {{ $allTopics = $allTopics | append (dict "Page" . "Count" $count) }}
+                {{ end }} <!-- Close the if condition -->
             {{ end }}
         {{ end }}
         

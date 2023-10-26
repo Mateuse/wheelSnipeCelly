@@ -112,7 +112,7 @@
             }
         }
 
-        .post-summary::first-letter {
+        .post-summary p::first-letter {
             float: left;
             font-size: 3em;
             line-height: 0.6em;
